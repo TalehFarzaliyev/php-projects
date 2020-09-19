@@ -1,8 +1,8 @@
 		<footer class="main-footer">
 	    <div class="pull-right hidden-xs">
-	      <b>Version</b> 2.4.0
+	      <b>Version</b> 1.1.0
 	    </div>
-	    <strong>Copyright &copy; 2020 </strong> All rights
+	    <strong>Copyright &copy; <?=date('Y');?> </strong> All rights
 	    reserved.
 	  </footer>
 	  <aside class="control-sidebar control-sidebar-dark">

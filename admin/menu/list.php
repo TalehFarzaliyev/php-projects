@@ -1,12 +1,21 @@
 <?php
-  print_r($categories);
+  include '../config.php';
+  include '../includes/head.php';
+  include '../includes/header.php';
+  include '../includes/nav.php';
+
+  $select  = "SELECT * FROM menu";
+  $result  = mysqli_query($conn, $select);
+  //$row     = mysqli_fetch_assoc($result);
+  //print_r($row); exit();
+
 ?>
 <div class="content-wrapper" style="min-height: 916px;">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Kateqoriyalar
-        <small><a href="<?=$site_url.'/categories.php?mod=add';?>">Kateqoriya Daxil Et</small>
+        Menyu
+        <small><a href="<?=$admin_url.'/menu/add.php';?>">Menyu Daxil Et</small>
       </h1>
     </section>
 
@@ -16,25 +25,32 @@
         <div class="col-md-12">
           <div class="box">
             <div class="box-header with-border">
-              <h3 class="box-title">Kateqoriyalar</h3>
+              <h3 class="box-title">Menyular</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
               <table class="table table-bordered">
-                <tbody><tr>
-                  <th style="width: 10px">#</th>
-                  <th>Ad</th>
-                  <th style="width: 40px">Label</th>
-                </tr>
+                <tbody>
+                  <tr>
+                    <th style="width: 10px">#</th>
+                    <th>Name</th>
+                    <th>Parent</th>
+                    <th>Type</th>
+                    <th>Status</th>
+                    <th style="width: 40px">Actions</th>
+                  </tr>
                 <?php
-                    foreach ($categories as $key => $value) {
+                   while ($row = mysqli_fetch_assoc($result)) {
                 ?>
                 <tr>
-                  <td><?=$value['id'];?></td>
-                  <td><?=$value['title'];?></td>
+                  <td><?=$row['id'];?></td>
+                  <td><?=$row['name'];?></td>
+                  <td><?=$row['parent_id'];?></td>
+                  <td><?=$row['type'];?></td>
+                  <td><?=$row['status'];?></td>
                   <td>
-                    <a href="<?=$site_url.'/categories.php?mod=edit&id='.$value['id'];?>"><span class="glyphicon glyphicon-edit"></span></a>
-                    <a href="<?=$site_url.'/categories.php?mod=del&id='.$value['id'];?>"><span class="glyphicon glyphicon-trash"></span></a>
+                    <a href="<?=$admin_url;?>"><span class="glyphicon glyphicon-edit"></span></a>
+                    <a href="<?=$admin_url;?>"><span class="glyphicon glyphicon-trash"></span></a>
                   </td>
                 </tr>
                 <?php
@@ -60,3 +76,7 @@
     </section>
     <!-- /.content -->
   </div>
+
+<?php 
+  include '../includes/footer.php';
+?>
