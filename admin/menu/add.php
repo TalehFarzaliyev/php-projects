@@ -1,5 +1,5 @@
 <?php
-  include '../config.php';
+  include '../functions/model_lib.php';
   include '../includes/head.php';
   include '../includes/header.php';
   include '../includes/nav.php';
@@ -23,7 +23,7 @@
 
     if($query)
     {
-      header('Location: http://myblog.me/admin/menu.php?mod=index');    
+      header('Location: http://myblog.me/admin/menu/list.php');    
     }
     else
     {
@@ -68,13 +68,14 @@
                 <div class="form-group">
                   <label>Parent</label>
                   <select class="form-control" name="parent">
-                    <option value="0">Please Select One</option>
-                    <option value="1">option 1</option>
-                    <option value="1">option 1</option>
-                    <option value="1">option 1</option>
-                    <option value="1">option 1</option>
-                    <option value="1">option 1</option>
-                    <option value="1">option 1</option>
+                    <option>Please Select One</option>
+                    <?php
+                      $parents = getParentElements();
+                      foreach($parents as $key=>$value)
+                      {
+                        echo '<option value="'.$value['id'].'">'.$value['name'].'</option>';
+                      }
+                    ?>
                   </select>
                 </div>
                 <div class="form-group">

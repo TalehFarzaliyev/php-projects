@@ -8,6 +8,16 @@
   $result  = mysqli_query($conn, $select);
   //$row     = mysqli_fetch_assoc($result);
   //print_r($row); exit();
+  
+  if(isset($_GET['del_id']) and !empty($_GET['del_id']))
+  {
+    $del_id = intval($_GET['del_id']);
+    $sql_d  = "DELETE FROM `menu` WHERE `id`=$del_id";
+    $execute= mysqli_query($conn,$sql_d);
+    if ($execute) {
+        header('location: http://myblog.me/admin/menu/list.php');
+    }
+  }  
 
 ?>
 <div class="content-wrapper" style="min-height: 916px;">
@@ -49,8 +59,8 @@
                   <td><?=$row['type'];?></td>
                   <td><?=$row['status'];?></td>
                   <td>
-                    <a href="<?=$admin_url;?>"><span class="glyphicon glyphicon-edit"></span></a>
-                    <a href="<?=$admin_url;?>"><span class="glyphicon glyphicon-trash"></span></a>
+                    <a href="<?=$admin_url.'/menu/edit.php?id='.$row['id'];?>"><span class="glyphicon glyphicon-edit"></span></a>
+                    <a href="<?=$admin_url.'/menu/list.php?del_id='.$row['id'];?>"><span class="glyphicon glyphicon-trash"></span></a>
                   </td>
                 </tr>
                 <?php
