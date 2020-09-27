@@ -1,7 +1,7 @@
 <?php
 	$site_url     = 'http://myblog.me/';
 	$admin_url    = 'http://myblog.me/admin';
-	$uploads_url  = 'http://myblog.me/admin/uploads';
+	$uploads_url  = 'http://myblog.me/uploads/';
 	$site_title   = 'MyBlog Dashboard';
 	$template_url = $admin_url.'/templates/';
 	$datas_url 	  = 'datas/';

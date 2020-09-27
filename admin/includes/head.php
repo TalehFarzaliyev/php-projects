@@ -6,6 +6,9 @@
   <title><?=$site_title;?></title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+  <!-- ckeditor source -->
+  <!-- <script type="text/javascript" src="<?=$template_url;?>/dist/js/ckeditor/ckeditor.js"></script> -->
   <!-- Bootstrap 3.3.7 -->
   <link rel="stylesheet" href="<?=$template_url;?>bower_components/bootstrap/dist/css/bootstrap.min.css">
   <!-- Font Awesome -->
@@ -27,7 +30,8 @@
   <link rel="stylesheet" href="<?=$template_url;?>bower_components/bootstrap-daterangepicker/daterangepicker.css">
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="<?=$template_url;?>plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-
+  <!-- <script src="https://cdn.ckeditor.com/4.14.0/full-all/ckeditor.js"></script> -->
+  <script type="text/javascript" src="<?=$template_url;?>/dist/js/ckeditor/ckeditor.js"></script>
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>

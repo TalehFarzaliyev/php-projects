@@ -1,5 +1,5 @@
 <aside class="main-sidebar">
-<section class="sidebar">
+    <section class="sidebar">
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li><a href="<?=$admin_url.'/menu/list.php';?>"><i class="fa fa-book"></i> <span>Menyu</span></a></li>
@@ -9,4 +9,4 @@
       </ul>
     </section>
     <!-- /.sidebar -->
-  </aside>
+</aside>
